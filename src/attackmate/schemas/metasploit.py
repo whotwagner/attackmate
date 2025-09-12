@@ -43,6 +43,7 @@ class MsfModuleCommand(BaseCommand):
     type: Literal['msf-module']
     target: StringNumber = '0'
     creates_session: Optional[str] = None
+    follow_session: bool = False
     session: Optional[str] = None
     payload: Optional[str] = None
     options: Dict[str, str] = {}

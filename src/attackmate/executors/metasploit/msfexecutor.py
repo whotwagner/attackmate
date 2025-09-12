@@ -118,7 +118,7 @@ class MsfModuleExecutor(BaseExecutor):
             result = exploit.execute(payload=payload)
             self.logger.debug(result)
             self.logger.debug(command.module_path())
-            if command.module_path() == 'multi/manage/shell_to_meterpreter':
+            if command.module_path() == 'multi/manage/shell_to_meterpreter' or command.follow_session:
                 self.logger.debug('Waiting for increased session..')
                 self.sessionstore.wait_for_increased_session(
                     command.creates_session, result['uuid'], self.msf.sessions, self.child_queue
